@@ -1,0 +1,30 @@
+<div class = "main">
+    <div class ="main-align">
+      <div class="content">
+        <div class = "upper-container">
+          <div class ="title">
+            <h1>Type & Size</h1>
+            <mat-icon (click)="openInfoPanel()">help</mat-icon>
+          </div>
+          <mat-form-field appearance="fill">
+            <mat-label>Options</mat-label>
+            <mat-select [(ngModel)]="selectedAlgorithm" name="option" (selectionChange)="updateHash()">
+              <mat-option *ngFor="let algorithm of options" [value]="algorithm">
+                {{algorithm}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class = "display">
+          <mat-form-field >
+            <mat-label>Introduzca un texto</mat-label>
+            <input matInput placeholder="Esto es un texto de ejemplo" [(ngModel)]="text" (input)="updateHash()">
+          </mat-form-field>
+          <mat-icon (click)="clearTextArea()">delete</mat-icon>
+          <div class ="text">
+            {{hash}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
