@@ -28,10 +28,6 @@ export class DisplayComponent implements OnInit {
   updateHash(): void {
     this.hash = this.text ? this.hashService.hash(this.text, this.selectedAlgorithm) : '';
   }
-
-  openInfoPanel(): void {
-    const dialogRef = this.dialog.open(DialogContentInfo);
-  }
   
   clearTextArea(): void{
       window.location.reload();
@@ -40,9 +36,3 @@ export class DisplayComponent implements OnInit {
   ngOnInit(): void {
   }
 }
-
-@Component({
-  selector:'dialog-content-info',
-  templateUrl: 'dialog-content-info.html'
-})
-export class DialogContentInfo {}
