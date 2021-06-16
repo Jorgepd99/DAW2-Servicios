@@ -33,6 +33,16 @@ export class DisplayComponent implements OnInit {
       window.location.reload();
   }
 
+  openInfoPanel(): void {
+    const dialogRef = this.dialog.open(DialogContentInfo);
+  }
+
   ngOnInit(): void {
   }
 }
+
+@Component({
+  selector:'dialog-content-info',
+  templateUrl: 'dialog-content-info.html'
+})
+export class DialogContentInfo{}
